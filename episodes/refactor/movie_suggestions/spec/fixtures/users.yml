@@ -1,0 +1,26 @@
+one:
+  name: Test User
+  email: user1@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  birthdate: <%= Date.new(1984, 1, 1) %>
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  settings: <%= { language: "en" }.to_json %>
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                 :integer          not null, primary key
+#  birthdate          :date             not null
+#  email              :string           not null
+#  encrypted_password :string           not null
+#  name               :string           not null
+#  settings           :json             not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_email  (email) UNIQUE
+#

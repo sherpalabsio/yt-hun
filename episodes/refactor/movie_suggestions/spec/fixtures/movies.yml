@@ -1,0 +1,18 @@
+one:
+  title: The Matrix
+  genre: Action
+
+two:
+  title: Inception
+  genre: Action
+
+# == Schema Information
+#
+# Table name: movies
+#
+#  id         :integer          not null, primary key
+#  genre      :string           not null
+#  title      :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

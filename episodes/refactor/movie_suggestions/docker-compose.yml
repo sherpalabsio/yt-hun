@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  movie_suggestions_dev:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/workspace
+    ports:
+      - "3000:3000"
+    environment:
+      - RAILS_ENV=development
+    command: sleep infinity

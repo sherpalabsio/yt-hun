@@ -1,0 +1,20 @@
+# config/internal_llm.yml
+
+defaults: &defaults
+  base_url: https://llm.example.com
+  token: dummy-token
+
+development:
+  <<: *defaults
+  base_url: http://localhost:3001
+  token: dev-token
+
+test:
+  <<: *defaults
+  base_url: http://localhost:3002
+  token: test-token
+
+production:
+  <<: *defaults
+  base_url: https://llm.example.com
+  token: <%= ENV['LLM_PROD_TOKEN'] %>
